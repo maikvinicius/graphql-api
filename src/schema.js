@@ -13,7 +13,9 @@ const schema = buildSchema(`
         posts: [Post]
     }
     type Mutation {
-        createPost(title: String!, image: String!, description: String!, author: String!): Post
+        createPost(id: ID!, title: String!): Post
+        updatePost(id: ID!, title: String!): Post
+        deletePost(id: ID!): Post
     }
 `);
 

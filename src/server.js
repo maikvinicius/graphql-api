@@ -2,7 +2,7 @@ var express = require('express');
 var cors = require('cors');
 var graphqlHTTP = require('express-graphql');
 const mongoose = require('mongoose');
-
+mongoose.set('useFindAndModify', false);
 
 mongoose.connect('mongodb+srv://teste:maik123@cluster0-jf8xl.mongodb.net/blog?retryWrites=true&w=majority', {
     useNewUrlParser: true,

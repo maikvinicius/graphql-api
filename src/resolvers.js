@@ -15,6 +15,12 @@ const resolvers = {
             author
         };
         return await Post.create(post);
+    },
+    async updatePost({ id, title }) {
+        return await Post.findOneAndUpdate({ _id: id }, { title: title });
+    },
+    async deletePost({ id }) {
+        return await Post.findByIdAndRemove({ _id: id }, {});
     }
 };
 
